@@ -20,19 +20,19 @@ class Robot
   end
 
   def to_north
-    self.y = y.to_i + 1
+    self.y = y.to_i + 1 unless not_allowed?
   end
 
   def to_south
-    self.y = y.to_i - 1
+    self.y = y.to_i - 1 unless not_allowed?
   end
 
   def to_east
-    self.x = x.to_i + 1
+    self.x = x.to_i + 1 unless not_allowed?
   end
 
   def to_west
-    self.x = x.to_i - 1
+    self.x = x.to_i - 1 unless not_allowed?
   end
 
   def lrotate
@@ -41,5 +41,11 @@ class Robot
 
   def rrotate
     self.facing = (facing - 90) % 360
+  end
+
+  private
+
+  def not_allowed?
+    !@table.in_boundary?(x.to_i, y.to_i)
   end
 end
