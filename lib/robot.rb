@@ -46,6 +46,6 @@ class Robot
   private
 
   def not_allowed?
-    !@table.in_boundary?(x.to_i, y.to_i)
+    @table.in_boundary?(x.to_i, y.to_i)
   end
 end

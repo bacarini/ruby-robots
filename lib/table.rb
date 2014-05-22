@@ -7,6 +7,6 @@ class Table
   end
 
   def in_boundary?(x, y)
-    x > self.width || x < 0 || y > self.height || y < 0
+    x >= self.width || x <= 0 || y >= self.height || y <= 0
   end
 end
