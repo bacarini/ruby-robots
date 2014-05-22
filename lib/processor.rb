@@ -4,8 +4,7 @@ class Processor
   end
 
   def process(command)
-    opcode = OperationCode::Base.new parse(command)
-    opcode.execute
+    OperationCode.exec parse(command), @robot
   end
 
   private
