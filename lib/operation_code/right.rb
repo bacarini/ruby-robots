@@ -1,6 +1,6 @@
 class OperationCode::Right < OperationCode::Base
   def execute
-    @robot.rrotate  if applicable?
+    @robot.rrotate if applicable?
   end
 
   private

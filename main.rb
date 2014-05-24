@@ -5,7 +5,6 @@ file_pointer =  0
 
 robot = Robot.new(Table.new)
 
-require 'pry'
 while file_pointer < input.size
   begin
     robot.execute input[file_pointer].chomp

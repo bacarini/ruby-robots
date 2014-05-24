@@ -1,6 +1,6 @@
 class OperationCode::West < OperationCode::Base
   def execute
-    @robot.to_west  if applicable?
+    @robot.to_west if applicable?
   end
 
   private

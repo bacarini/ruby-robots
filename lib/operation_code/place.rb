@@ -12,8 +12,6 @@ class OperationCode::Place < OperationCode::Base
     @robot.facing = Robot::COMPASS_POINTS[f]
   end
 
-  private
-
   def applicable?
     cmd == 'PLACE'
   end
