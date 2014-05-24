@@ -6,6 +6,6 @@ class OperationCode::Right < OperationCode::Base
   private
 
   def applicable?
-    cmd == 'RIGHT'
+    cmd == 'RIGHT' && !@robot.facing.nil?
   end
 end

@@ -7,8 +7,8 @@ class OperationCode::Place < OperationCode::Base
 
   def set_robot
     raise ArgumentError if x.nil? || y.nil? || f.nil?
-    @robot.x = x
-    @robot.y = y
+    @robot.x = x.to_i
+    @robot.y = y.to_i
     @robot.facing = Robot::COMPASS_POINTS[f]
   end
 
