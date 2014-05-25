@@ -46,20 +46,36 @@ class Robot
   private
 
   def not_allowed?
-    if (facing == 90 || facing == 0) && x == 0 && y == 0
+    if (north? || east?) && @table.left_bottom?(x,y)
       return false
-    elsif (facing == 180 || facing == 270) && x == 5 && y == 5
+    elsif (west? || south?) && @table.right_top?(x,y)
       return false
-    elsif !(facing == 90) && x > 0 && x < 5 && y == 5
+    elsif !north? && x > 0 && x < @table.width && y == @table.height
       return false
-    elsif !(facing == 270) && y > 0 && y < 5 && x == 5
+    elsif !south? && y > 0 && y < @table.height && x == @table.width
       return false
-    elsif (facing == 0 || facing == 270) && x == 5 && y == 0
+    elsif (east? || south?) && @table.right_bottom?(x,y)
       return false
-    elsif (facing == 90 || facing == 180) && x == 0 && y == 5
+    elsif (north? || west?) && @table.left_top?(x,y)
       return false
     else
       @table.in_boundary?(x, y)
     end
+  end
+
+  def north?
+    facing == 90
+  end
+
+  def south?
+    facing == 270
+  end
+
+  def west?
+    facing == 180
+  end
+
+  def east?
+    facing == 0
   end
 end

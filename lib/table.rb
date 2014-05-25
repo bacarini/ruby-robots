@@ -9,4 +9,20 @@ class Table
   def in_boundary?(x, y)
     x >= self.width || x <= 0 || y >= self.height || y <= 0
   end
+
+  def right_bottom?(x,y)
+    x == self.width && y == 0
+  end
+
+  def left_bottom?(x,y)
+    x == 0 && y == 0
+  end
+
+  def right_top?(x,y)
+    x == self.height && y == self.height
+  end
+
+  def left_top?(x,y)
+    x == 0 && y == self.height
+  end
 end
