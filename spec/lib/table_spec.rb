@@ -31,4 +31,10 @@ describe Table do
     it { expect(Table.new.right_top?(0,5)).to be_false }
     it { expect(Table.new.right_top?(5,0)).to be_false }
   end
+
+  describe "#valid?" do
+    it { expect(Table.new.valid?(5,5)).to be_true }
+    it { expect(Table.new.valid?(9,5)).to be_false }
+    it { expect(Table.new.valid?(25,20)).to be_false }
+  end
 end

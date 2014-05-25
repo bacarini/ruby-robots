@@ -15,6 +15,10 @@ class Robot
     @table = table
   end
 
+  def valid_place?(x,y)
+    @table.valid? x, y
+  end
+
   def execute(string_code)
     @processor.process string_code
   end

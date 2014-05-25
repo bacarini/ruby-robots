@@ -6,6 +6,10 @@ class Table
     self.width  = width
   end
 
+  def valid?(x, y)
+    x <= self.width && x >= 0 && y <= self.height && y >= 0
+  end
+
   def in_boundary?(x, y)
     x >= self.width || x <= 0 || y >= self.height || y <= 0
   end
