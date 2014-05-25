@@ -114,4 +114,10 @@ describe Robot do
     it { expect(robot.facing).to eq 0 }
     it { expect(robot.facing).not_to eq 180 }
   end
+
+  describe "#valid_place?" do
+    it { expect(robot.valid_place?(2,3,'NORTH')).to be_true }
+    it { expect(robot.valid_place?(9,3,'NORTH')).to be_false }
+    it { expect(robot.valid_place?(1,3,'WHAYEVER')).to be_false }
+  end
 end

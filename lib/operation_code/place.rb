@@ -17,6 +17,6 @@ class OperationCode::Place < OperationCode::Base
   end
 
   def invalid?
-    x.nil? || y.nil? || f.nil? || !@robot.valid_place?(x.to_i, y.to_i)
+    x.nil? || y.nil? || f.nil? || !@robot.valid_place?(x.to_i, y.to_i, f)
   end
 end

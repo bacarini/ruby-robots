@@ -15,8 +15,8 @@ class Robot
     @table = table
   end
 
-  def valid_place?(x,y)
-    @table.valid? x, y
+  def valid_place?(x,y,f)
+    @table.valid?(x,y) && !COMPASS_POINTS[f].nil?
   end
 
   def execute(string_code)
