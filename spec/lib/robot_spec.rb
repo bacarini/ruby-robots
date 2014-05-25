@@ -1,5 +1,4 @@
 require "spec_helper"
-require "pry"
 
 describe Robot do
   let(:robot) { robot = Robot.new(Table.new) }
