@@ -13,6 +13,13 @@ Rules:
 * MOVE will move the toy robot one unit forward in the direction it is currently facing.
 * LEFT and RIGHT will rotate the robot 90 degrees in the specified direction without changing the position of the robot.
 
+
+Requirements:
+-------------
+
+* Ruby 2.0.0
+* Rspec 2.14.1
+
 Test:
 -----
 ```
@@ -22,6 +29,28 @@ rspec spec/
 
 Run:
 ----
+The system includes not only input from file but also a STDIN.
+
+Example:
 ```
-ruby main.rb
+$ ruby main.rb
+
+Welcome to Toy Ruby Robot Simulator
+Be aware of the valid commands
+
+=================
+PLACE X,Y,FACING
+LEFT
+RIGHT
+MOVE
+REPORT
+=================
+The system will proceed to the file input. Would you like to enter your commands manually instead? (yes/no)
+```
+if you choose a manually input, you can put one of the valid command or exit to leave the system.
+
+Example:
+```
+yes
+Please, enter your command or type exit to leave the system:
 ```
