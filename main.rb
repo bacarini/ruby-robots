@@ -1,5 +1,15 @@
 Dir["lib/**/*.rb"].each { |file| load file }
 
+
+puts "Welcome to Toy Ruby Robot Simulator"
+puts "Be aware of the valid commands"
+puts "\n================="
+puts "PLACE X,Y,FACING"
+puts "LEFT"
+puts "RIGHT"
+puts "MOVE"
+puts "REPORT"
+puts "================="
 @robot = Robot.new(Table.new)
 
 def valid?(answer)
@@ -10,8 +20,7 @@ def handle_error(&block)
   begin
     block.call
   rescue Exception => e
-    raise "Error: #{e.message}. Please check your input and try again!\n"+
-    "Valid Commands: [PLACE X,Y,FACING ; LEFT ; RIGHT ; MOVE ; REPORT]"
+    raise "Error: #{e.message}. Please check your input and try again!"
   end
 end
 
