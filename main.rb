@@ -56,5 +56,3 @@ def start
     start
   end
 end
-
-start
