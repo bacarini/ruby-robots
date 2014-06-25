@@ -31,9 +31,11 @@ Run:
 ----
 The system includes not only input from file but also a STDIN.
 
+To run execute the command `./bin/robots`
+
 Example:
 ```
-$ ruby main.rb
+$ ./bin/robots
 
 Welcome to Toy Ruby Robot Simulator
 Be aware of the valid commands
