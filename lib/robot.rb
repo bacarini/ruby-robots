@@ -23,6 +23,10 @@ class Robot
     @processor.process string_code
   end
 
+  def already_placed?
+    !facing.nil?
+  end
+
   def to_north
     self.y += 1 unless not_allowed?
   end

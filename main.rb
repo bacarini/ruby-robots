@@ -1,6 +1,5 @@
 Dir["lib/**/*.rb"].each { |file| load file }
 
-
 puts "Welcome to Toy Ruby Robot Simulator"
 puts "Be aware of the valid commands"
 puts "\n================="
@@ -10,17 +9,15 @@ puts "RIGHT"
 puts "MOVE"
 puts "REPORT"
 puts "================="
-@robot = Robot.new(Table.new)
+def start
+  @robot = Robot.new(Table.new)
 
-def valid?(answer)
-  answer == "NO" || answer == "YES"
-end
-
-def handle_error(&block)
-  begin
-    block.call
-  rescue Exception => e
-    raise "Error: #{e.message}. Please check your input and try again!"
+  puts "The system will proceed to the file input. Would you like to enter your commands manually instead? (yes/no) "
+  answer = gets.chomp.upcase
+  if valid?(answer)
+    answer == 'YES' ? by_command : by_file
+  else
+    start
   end
 end
 
@@ -47,12 +44,14 @@ def by_command
   end
 end
 
-def start
-  puts "The system will proceed to the file input. Would you like to enter your commands manually instead? (yes/no) "
-  answer = gets.chomp.upcase
-  if  valid?(answer)
-    answer == 'YES' ? by_command : by_file
-  else
-    start
+def handle_error(&block)
+  begin
+    block.call
+  rescue Exception => e
+    raise "Error: #{e.message}. Please check your input and try again!"
   end
+end
+
+def valid?(answer)
+  answer == "NO" || answer == "YES"
 end

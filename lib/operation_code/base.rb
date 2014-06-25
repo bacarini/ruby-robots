@@ -2,9 +2,17 @@ module OperationCode
   DIRECTIONS = []
 
   def self.exec(args, robot)
-    DIRECTIONS.each do |child|
-      child.new(args, robot).execute
+    if robot.already_placed? || place?(args)
+      DIRECTIONS.each do |child|
+        child.new(args, robot).execute
+      end
+    else
+      puts "I can't move if you don't place me first."
     end
+  end
+
+  def self.place?(args)
+    args.first == 'PLACE'
   end
 
   class Base
